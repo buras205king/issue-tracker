@@ -24,7 +24,7 @@ const NavBar = () => {
     ]
 
     return (
-        <nav className='flex items-center w-full p-3 rounded-full'>
+        <nav className='flex items-center w-full p-3  bg-gray-100'>
             
             <Link className='p-3' href="/">
                 <FcLibrary className="text-4xl" />
@@ -37,7 +37,7 @@ const NavBar = () => {
                             className={`${link.href === currentpath 
                                 ? 'text-orange-500' 
                                 : 'hover:text-red-500'
-                            } transition-colors`} 
+                            } transition-colors `} 
                             href={link.href}
                         >
                             {link.label}

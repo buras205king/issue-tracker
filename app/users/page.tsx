@@ -1,19 +1,16 @@
-import React from 'react'
-interface Users{
-  id:number;
-  name:string;}
-const Bbb = async() => {
- const res= await fetch("https://jsonplaceholder.typicode.com/users");
- const users:Users[] =await res.json();
+export default async function UsersRoute() {
+  const res = await fetch('https://jsonplaceholder.typicode.com/users')
+  const users = await res.json()
+
   return (
-    <div>
-      <h1>users</h1>
-      <p>{new Date().toLocaleTimeString()}</p>
-        <ul>
-          {users.map(user=><li key={user.id}>{user.name}</li>)}
-        </ul>
-        </div>
+    <div className="space-y-3">
+      <h1 className="text-2xl font-semibold">Users</h1>
+      <p className="text-gray-600">This is the Users page.</p>
+      <ul className="list-disc pl-6">
+        {users.map((user: { id: number; name: string }) => (
+          <li key={user.id}>{user.name}</li>
+        ))}
+      </ul>
+    </div>
   )
 }
-
-export default Bbb;

@@ -18,8 +18,12 @@ const SideBar = () => {
         href: "/Teams"
     },
     {
+        label: "Issues",
+        href: "/issues"
+    },
+    {
         label: "Users",
-        href: "/Users"
+        href: "/users"
     },
     {
         label: "Timeline",
@@ -44,7 +48,7 @@ const SideBar = () => {
               className={`${link.href === currentpath 
                 ? 'text-orange-500' 
                 : 'hover:text-red-500'
-              } transition-colors`} 
+              } transition-colors hover:bg-slate-300 p-3`} 
               href={link.href}
             >
               {link.label}
